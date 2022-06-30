@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.connect(
-  "mongodb://Shivam_Shekhar:Shivam$0410@ac-wxvzfv5-shard-00-00.anb7opo.mongodb.net:27017,ac-wxvzfv5-shard-00-01.anb7opo.mongodb.net:27017,ac-wxvzfv5-shard-00-02.anb7opo.mongodb.net:27017/?ssl=true&replicaSet=atlas-ofts0f-shard-0&authSource=admin&retryWrites=true&w=majority/blogDB",
+  "mongodb://Shivam_Shekhar:Shivam$0410@ac-wxvzfv5-shard-00-00.anb7opo.mongodb.net:27017,ac-wxvzfv5-shard-00-01.anb7opo.mongodb.net:27017,ac-wxvzfv5-shard-00-02.anb7opo.mongodb.net:27017/?ssl=true&replicaSet=atlas-ofts0f-shard-0&authSource=admin&retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) {
