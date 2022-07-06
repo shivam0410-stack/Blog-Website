@@ -1,7 +1,8 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
+const connectDB = require("./connection");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
@@ -16,9 +17,11 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+//app.use(express.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+/*
 mongoose.connect(
   "mongodb+srv://Shivam_Shekhar:Shivam$0410@cluster0.anb7opo.mongodb.net/blogDB",
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -30,6 +33,7 @@ mongoose.connect(
     }
   }
 );
+*/
 
 const postSchema = {
   title: String,
@@ -84,5 +88,7 @@ app.get("/contact", function (req, res) {
 });
 
 app.listen(process.env.port || 80, function () {
-  console.log("Server started on port 80");
+  connectDB()
+    .then((data) => console.log("Server is running", data))
+    .catch((error) => console.log(error));
 });

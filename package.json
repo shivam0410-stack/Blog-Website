@@ -4,16 +4,20 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "npx nodemon index",
-    "start": "node index"
+    "dev": "npx nodemon app",
+    "start": "node app"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.8",
     "express": "^4.16.3",
     "lodash": "^4.17.11",
     "mongoose": "^5.13.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
